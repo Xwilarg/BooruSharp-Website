@@ -65,7 +65,7 @@ new Yandere(BooruAuth auth = null);</pre>
                 <thead>
                     <tr>
                         <th>Booru</th>
-                        <th>Post by ID</th>
+                        <th>Post by MD5</th>
                         <th>Tag by ID</th>
                         <th>Comment API</th>
                         <th>Last Comments API</th>
@@ -95,7 +95,7 @@ new Yandere(BooruAuth auth = null);</pre>
                     <tr>
                         <td>E621</td>
                         <td>✔️</td>
-                        <td>❌</td>
+                        <td>✔️</td>
                         <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
@@ -104,7 +104,7 @@ new Yandere(BooruAuth auth = null);</pre>
                     <tr>
                         <td>E926</td>
                         <td>✔️</td>
-                        <td>❌</td>
+                        <td>✔️</td>
                         <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
@@ -113,7 +113,7 @@ new Yandere(BooruAuth auth = null);</pre>
                     <tr>
                         <td>Furry Booru</td>
                         <td>✔️</td>
-                        <td>✔️</td>
+                        <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>❌</td>
@@ -149,7 +149,7 @@ new Yandere(BooruAuth auth = null);</pre>
                     <tr>
                         <td>Realbooru</td>
                         <td>✔️</td>
-                        <td>✔️</td>
+                        <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>❌</td>
@@ -158,7 +158,7 @@ new Yandere(BooruAuth auth = null);</pre>
                     <tr>
                         <td>Rule 34</td>
                         <td>✔️</td>
-                        <td>✔️</td>
+                        <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>❌</td>
@@ -167,7 +167,7 @@ new Yandere(BooruAuth auth = null);</pre>
                     <tr>
                         <td>Safebooru</td>
                         <td>✔️</td>
-                        <td>✔️</td>
+                        <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
@@ -194,7 +194,7 @@ new Yandere(BooruAuth auth = null);</pre>
                     <tr>
                         <td>Xbooru</td>
                         <td>✔️</td>
-                        <td>✔️</td>
+                        <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>❌</td>
@@ -231,6 +231,10 @@ new Yandere(BooruAuth auth = null);</pre>
 <pre class="prettyprint">bool HaveSearchLastComment();</pre><br/>
             CheckAvailabilityAsync check if the booru is avaiable, throw a HttpRequestException if not
 <pre class="prettyprint">async Task CheckAvailabilityAsync();</pre><br/>
+            <hr/>
+            <h3>Post functions</h3>
+            HaveRelatedAPI returns if the booru have a "tag related" API
+<pre class="prettyprint">bool HaveRelatedAPI();</pre><br/>
         </div>
     </body>
 </html>
