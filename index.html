@@ -2,14 +2,15 @@
 <html>
     <head>
         <title>BooruSharp</title>
-		<link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     </head>
     <body>
         <div id="sideMenu">
             <a href="#introduction">Introduction</a>
         </div>
         <div id="content">
-            Welcome on BooruSharp's documentation.<br/><br/>
+            <h3>Welcome on BooruSharp's documentation.</h3>
             BooruSharp is a C# library allowing you to get images from Booru websites. BooruSharp currently handle the following websites:
             <ul>
                 <li>booru.allthefallen.moe</li>
@@ -28,7 +29,208 @@
                 <li>xbooru.com</li>
                 <li>yande.re</li>
             </ul>
-            This documentation is a work in progress. For now, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a>
+            This documentation is a work in progress for the version 2.0.0. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a>
+            <hr/>
+            <h3>Quick Start</h3>
+            To begin with you must instantiate a new Booru, they are in the namespace BooruSharp.Booru<br/>
+            <pre class="prettyprint">var booru = new BooruSharp.Booru.Gelbooru();</pre>
+            Then you can use all the different functions from it:
+            <pre class="prettyprint">
+var result = booru.GetRandomImageAsync("kantai_collection");
+Console.WriteLine(result.fileUrl);</pre>
+            You can scroll bellow to see the different functions available.
+            <hr/>
+            <h3>Instantiate boorus</h3>
+            There are several boorus you can use, here are the ways the instantiate them:
+            <pre class="prettyprint">
+new Atfbooru(BooruAuth auth = null);
+new DanbooruDonmai(BooruAuth auth = null);
+new E621(BooruAuth auth = null);
+new E926(BooruAuth auth = null);
+new Furrybooru(BooruAuth auth = null);
+new Gelbooru(BooruAuth auth = null);
+new Konachan(BooruAuth auth = null);
+new Lolibooru(BooruAuth auth = null);
+new Realbooru(BooruAuth auth = null);
+new Rule34(BooruAuth auth = null);
+new Safebooru(BooruAuth auth = null);
+new Sakugabooru(BooruAuth auth = null);
+new SankakuComplex(BooruAuth auth = null);
+new Xbooru(BooruAuth auth = null);
+new Yandere(BooruAuth auth = null);</pre>
+            BooruAuth is the authentification method, for now it's not available.
+            <hr/>
+            <h3>Feature list</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Booru</th>
+                        <th>Post by ID</th>
+                        <th>Tag by ID</th>
+                        <th>Comment API</th>
+                        <th>Last Comments API</th>
+                        <th>Wiki API</th>
+                        <th>Related Tag API</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Atfbooru</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>Danbooru Donmai</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>E621</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>E926</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Furry Booru</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Gelbooru</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Konachan</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>Lolibooru</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>Realbooru</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Rule 34</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Safebooru</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Sakugabooru</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>Sankaku Complex</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Xbooru</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Yandere</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr/>
+            <h3>Exception thrown</h3>
+            <ul>
+                <li>BooruSharp.Search.FeatureUnavailable: This function is not available for this booru (see above)</li>
+                <li>BooruSharp.Search.InvalidTags: There is no image with the tags you provided</li>
+            </ul>
+            <hr/>
+            <h3>General functions</h3>
+            HaveRelatedAPI returns if the booru have a "tag related" API
+<pre class="prettyprint">bool HaveRelatedAPI();</pre><br/>
+            HaveWikiAPI returns if the booru have a "wiki" API
+<pre class="prettyprint">bool HaveWikiAPI();</pre><br/>
+            HaveCommentAPI returns if the booru have a "comment" API
+<pre class="prettyprint">bool HaveCommentAPI();</pre><br/>
+            HaveTagByIdAPI returns if the booru have a can search tags by ID
+<pre class="prettyprint">bool HaveTagByIdAPI();</pre><br/>
+            HaveSearchLastComment returns if the booru can search for all last comments
+<pre class="prettyprint">bool HaveSearchLastComment();</pre><br/>
+            CheckAvailabilityAsync check if the booru is avaiable, throw a HttpRequestException if not
+<pre class="prettyprint">async Task CheckAvailabilityAsync();</pre><br/>
         </div>
     </body>
 </html>
