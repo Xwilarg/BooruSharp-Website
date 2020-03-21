@@ -46,27 +46,6 @@ Console.WriteLine(result.fileUrl);</pre>
             You can scroll bellow to see the different functions available.<br/>
             <br/>
             <hr/>
-            <h2>Instantiate boorus</h2>
-            There are several boorus you can use, here are the ways the instantiate them:
-            <pre class="prettyprint">
-new Atfbooru(BooruAuth auth = null);
-new DanbooruDonmai(BooruAuth auth = null);
-new E621(BooruAuth auth = null);
-new E926(BooruAuth auth = null);
-new Furrybooru(BooruAuth auth = null);
-new Gelbooru(BooruAuth auth = null);
-new Konachan(BooruAuth auth = null);
-new Lolibooru(BooruAuth auth = null);
-new Realbooru(BooruAuth auth = null);
-new Rule34(BooruAuth auth = null);
-new Safebooru(BooruAuth auth = null);
-new Sakugabooru(BooruAuth auth = null);
-new SankakuComplex(BooruAuth auth = null);
-new Xbooru(BooruAuth auth = null);
-new Yandere(BooruAuth auth = null);</pre>
-            BooruAuth is the authentification method, for now it's not available.<br/>
-            <br/>
-            <hr/>
             <h2>Feature list</h2>
             <table>
                 <thead>
@@ -219,6 +198,60 @@ new Yandere(BooruAuth auth = null);</pre>
                 </tbody>
             </table>
             <br/><br/>
+            <hr/>
+            <h2>Instantiate boorus</h2>
+            There are several boorus you can use, here are the ways the instantiate them:
+            <pre class="prettyprint">
+new Atfbooru(BooruAuth auth = null);
+new DanbooruDonmai(BooruAuth auth = null);
+new E621(BooruAuth auth = null);
+new E926(BooruAuth auth = null);
+new Furrybooru(BooruAuth auth = null);
+new Gelbooru(BooruAuth auth = null);
+new Konachan(BooruAuth auth = null);
+new Lolibooru(BooruAuth auth = null);
+new Realbooru(BooruAuth auth = null);
+new Rule34(BooruAuth auth = null);
+new Safebooru(BooruAuth auth = null);
+new Sakugabooru(BooruAuth auth = null);
+new SankakuComplex(BooruAuth auth = null);
+new Xbooru(BooruAuth auth = null);
+new Yandere(BooruAuth auth = null);</pre>
+            BooruAuth is the authentification method, for now it's not available.<br/>
+            <br/>
+            <hr/>
+            <h2>Create your own booru</h2>
+            To create your own booru, you need to inherit one of the class in BooruSharp.Booru.Template.<br/>
+            Each booru take in parameters the base URL of the website, the authentification to the booru (can be null) and somme BooruOptions (optional).<br/>
+            The templates are:
+            <ul>
+                <li>Danbooru: Based on Danbooru Donmai</li>
+                <li>E621: Based on E621</li>
+                <li>Gelbooru: Based on Gelbooru</li>
+                <li>Gelbooru02: Based on Gelbooru 0.2</li>
+                <li>Moebooru: Based on Moebooru</li>
+                <li>Sankaku: Based on Sankaku Channel</li>
+            </ul>
+            Here's an example with Safebooru (https://safebooru.org/):
+<pre class="prettyprint">public sealed class Safebooru(BooruAuth auth = null) : base("safebooru.org", auth, BooruOptions.noComment)</pre>
+            BooruAuth is a class taking in parameter your login and your password hash.<br/>
+            For now it's not used so it must be set as null.<br/>
+            <br/>
+            BooruOptions are settings to precise the behaviour of your booru.<br/>
+            Templates probably already gives most of the options you need so you don't have to think too much about them.
+            <ul>
+                <li>useHttp: Use HTTP instead of HTTPS to do requests</li>
+                <li>noWiki: Wiki not available for this booru</li>
+                <li>noRelated: Related tags not available for this booru</li>
+                <li>noComment: Comments not available for this booru</li>
+                <li>noTagById: Tags can't be searched by ID for this booru</li>
+                <li>noPostByMd5: Posts can't be searched by their MD5</li>
+                <li>noLastComments: Can't get list of all lasts comments for this booru</li>
+                <li>commentApiXml: Comment API can't be contacted using JSON</li>
+                <li>tagApiXml: Tag API can't be contacted using JSON</li>
+                <li>limitOf20000: Only for Gelbooru and Gelbooru02 template, limit of 20 000 posts per requests</li>
+            </ul>
+            <br/>
             <hr/>
             <h2>Exception thrown</h2>
             <ul>
