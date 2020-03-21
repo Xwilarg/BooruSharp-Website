@@ -278,16 +278,76 @@ enum Rating
 <pre class="prettyprint">string md5</pre><br/>
             <hr/>
             <h2>Comment functions</h2>
-            Work in Progress...
+            GetCommentsAsync return the comment of a post given it id
+<pre class="prettyprint">async Task&lt;Search.Comment.SearchResult&gt; GetCommentsAsync(int postId);</pre><br/>
+            GetLastsCommentsAsync return the lasts comments posted on the website
+<pre class="prettyprint">async Task&lt;Search.Comment.SearchResult&gt; GetLastsCommentsAsync();</pre><br/>
+            <br/>
+            <h3>Search.Comment.SearchResult is defined by the following struct</h3>
+            Id of the comment
+<pre class="prettyprint">int commentId</pre><br/>
+            Id of the image associated with the comment
+<pre class="prettyprint">int postId</pre><br/>
+            Id of the author of the comment, is null if the author is anonymous
+<pre class="prettyprint">int? authorId</pre><br/>
+            When the comment was posted
+<pre class="prettyprint">DateTime creation</pre><br/>
+            Name of the author of the comment
+<pre class="prettyprint">string authorName</pre><br/>
+            Comment's message
+<pre class="prettyprint">string body</pre><br/>
             <hr/>
             <h2>Tag functions</h2>
-            Work in Progress...
+            GetTagAsync return a tag given it name
+<pre class="prettyprint">async Task&lt;Search.Tag.SearchResult&gt; GetTagAsync(string name);</pre><br/>
+            GetTagAsync return a tag given it id
+<pre class="prettyprint">async Task&lt;Search.Tag.SearchResult&gt; GetTagAsync(int id);</pre><br/>
+            GetTagsAsync return the similar tags of the one given in parameter
+<pre class="prettyprint">async Task&lt;Search.Tag.SearchResult[]&gt; GetTagsAsync(string name);</pre><br/>
+            <br/>
+            <h3>Search.Tag.SearchResult is defined by the following struct</h3>
+            Id of the tag
+<pre class="prettyprint">int id</pre><br/>
+            Name of the tag
+<pre class="prettyprint">string name</pre><br/>
+            Type of the tag (character, copyright, etc...)
+<pre class="prettyprint">TagType tag
+enum TagType
+{
+    Trivia,
+    Artist,
+    Copyright = 3,
+    Character,
+    Metadata
+}</pre><br/>
+            Number of occurences of the tag
+<pre class="prettyprint">int count</pre><br/>
             <hr/>
             <h2>Related functions</h2>
-            Work in Progress...
+            GetRelatedAsync return the tags related to the one given in parameter
+<pre class="prettyprint">async Task&lt;Search.Related.SearchResult[]&gt; GetRelatedAsync(string tag);</pre><br/>
+            <br/>
+            <h3>Search.Related.SearchResult is defined by the following struct</h3>
+            Name of the tag
+<pre class="prettyprint">string name</pre><br/>
+            Number of occurences of the tag
+<pre class="prettyprint">int? count</pre><br/>
             <hr/>
             <h2>Wiki functions</h2>
-            Work in Progress...
+            GetWikiAsync return a wiki page
+<pre class="prettyprint">async Task&lt;Search.Wiki.SearchResult&gt; GetWikiAsync(string query);</pre><br/>
+            <br/>
+            <h3>Search.Wiki.SearchResult is defined by the following struct</h3>
+            Id of the wiki entry
+<pre class="prettyprint">int id</pre><br/>
+            Name of the tag described
+<pre class="prettyprint">string title</pre><br/>
+            Date when the entry was created
+<pre class="prettyprint">DateTime creation</pre><br/>
+            Date of the latest update to the entry
+<pre class="prettyprint">DateTime lastUpdate</pre><br/>
+            Tag description
+<pre class="prettyprint">string body</pre><br/>
             <hr/>
         </div>
     </body>
