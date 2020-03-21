@@ -10,7 +10,7 @@
             <a href="#introduction">Introduction</a>
         </div>
         <div id="content">
-            <h3>Welcome on BooruSharp 2.0.0 documentation.</h3>
+            <h2>Welcome on BooruSharp 2.0.0 documentation.</h2>
             BooruSharp is a C# library allowing you to get images from Booru websites. BooruSharp currently handle the following websites:
             <ul>
                 <li>booru.allthefallen.moe</li>
@@ -31,10 +31,10 @@
             </ul>
             This documentation is a work in progress for the version 2.0.0. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a>
             <hr/>
-            <h3>Migrating from 1.4.8 to 2.0.0</h3>
+            <h2>Migrating from 1.4.8 to 2.0.0</h2>
             See the <a href="transition.html">transition guide</a>.
             <hr/>
-            <h3>Quick Start</h3>
+            <h2>Quick Start</h2>
             To begin with you must instantiate a new Booru, they are in the namespace BooruSharp.Booru<br/>
             <pre class="prettyprint">var booru = new BooruSharp.Booru.Gelbooru();</pre>
             Then you can use all the different functions from it:
@@ -43,7 +43,7 @@ var result = booru.GetRandomImageAsync("kantai_collection");
 Console.WriteLine(result.fileUrl);</pre>
             You can scroll bellow to see the different functions available.
             <hr/>
-            <h3>Instantiate boorus</h3>
+            <h2>Instantiate boorus</h2>
             There are several boorus you can use, here are the ways the instantiate them:
             <pre class="prettyprint">
 new Atfbooru(BooruAuth auth = null);
@@ -63,7 +63,7 @@ new Xbooru(BooruAuth auth = null);
 new Yandere(BooruAuth auth = null);</pre>
             BooruAuth is the authentification method, for now it's not available.
             <hr/>
-            <h3>Feature list</h3>
+            <h2>Feature list</h2>
             <table>
                 <thead>
                     <tr>
@@ -215,13 +215,13 @@ new Yandere(BooruAuth auth = null);</pre>
                 </tbody>
             </table>
             <hr/>
-            <h3>Exception thrown</h3>
+            <h2>Exception thrown</h2>
             <ul>
                 <li>BooruSharp.Search.FeatureUnavailable: This function is not available for this booru (see above)</li>
                 <li>BooruSharp.Search.InvalidTags: There is no image with the tags you provided</li>
             </ul>
             <hr/>
-            <h3>General functions</h3>
+            <h2>General functions</h2>
             HaveRelatedAPI returns if the booru have a "tag related" API
 <pre class="prettyprint">bool HaveRelatedAPI();</pre><br/>
             HaveWikiAPI returns if the booru have a "wiki" API
@@ -235,19 +235,58 @@ new Yandere(BooruAuth auth = null);</pre>
             CheckAvailabilityAsync check if the booru is avaiable, throw a HttpRequestException if not
 <pre class="prettyprint">async Task CheckAvailabilityAsync();</pre><br/>
             <hr/>
-            <h3>Post functions</h3>
+            <h2>Post functions</h2>
+            GetImageByMd5Async returns a post given it MD5 hash
+<pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetImageByMd5Async(string md5);</pre><br/>
+            GetRandomImageAsync returns a random post. Tags can be given in parameters
+<pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetRandomImageAsync(params string[] tagsArg);</pre><br/>
+            <br/>
+            <h3>Search.Post.SearchResult is defined by the following struct</h3>
+            Url of the image
+<pre class="prettyprint">Uri fileUrl</pre><br/>
+            Preview url of the image
+<pre class="prettyprint">Uri previewUrl</pre><br/>
+            Is the image safe or not
+<pre class="prettyprint">Rating rating
+enum Rating
+{
+    Safe,
+    Questionable,
+    Explicit
+}</pre><br/>
+            All the tags contained in the image
+<pre class="prettyprint">string[] tags</pre><br/>
+            Id of the image
+<pre class="prettyprint">int id</pre><br/>
+            Size in octets of the image
+<pre class="prettyprint">int? size</pre><br/>
+            Height in pixels of the image
+<pre class="prettyprint">int height</pre><br/>
+            Width in pixels of the image
+<pre class="prettyprint">int width</pre><br/>
+            Height in pixels of the preview image
+<pre class="prettyprint">int? previewHeight</pre><br/>
+            Width in pixels of the preview image
+<pre class="prettyprint">int previewWidth</pre><br/>
+            Wehn the post was created
+<pre class="prettyprint">DateTime? creation</pre><br/>
+            Where the image is coming from
+<pre class="prettyprint">string source</pre><br/>
+            Score of the image
+<pre class="prettyprint">int score</pre><br/>
+            Hash (md5) of the image
+<pre class="prettyprint">string md5</pre><br/>
+            <hr/>
+            <h2>Comment functions</h2>
             Work in Progress...
             <hr/>
-            <h3>Comment functions</h3>
+            <h2>Tag functions</h2>
             Work in Progress...
             <hr/>
-            <h3>Tag functions</h3>
+            <h2>Related functions</h2>
             Work in Progress...
             <hr/>
-            <h3>Related functions</h3>
-            Work in Progress...
-            <hr/>
-            <h3>Wiki functions</h3>
+            <h2>Wiki functions</h2>
             Work in Progress...
             <hr/>
         </div>
