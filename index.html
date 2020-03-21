@@ -29,10 +29,12 @@
                 <li>xbooru.com</li>
                 <li>yande.re</li>
             </ul>
-            This documentation is a work in progress for the version 2.0.0. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a>
+            This documentation is a work in progress for the version 2.0.0. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a><br/>
+            <br/>
             <hr/>
             <h2>Migrating from 1.4.8 to 2.0.0</h2>
-            See the <a href="transition.html">transition guide</a>.
+            See the <a href="transition.html">transition guide</a>.<br/>
+            <br/>
             <hr/>
             <h2>Quick Start</h2>
             To begin with you must instantiate a new Booru, they are in the namespace BooruSharp.Booru<br/>
@@ -41,7 +43,8 @@
             <pre class="prettyprint">
 var result = booru.GetRandomImageAsync("kantai_collection");
 Console.WriteLine(result.fileUrl);</pre>
-            You can scroll bellow to see the different functions available.
+            You can scroll bellow to see the different functions available.<br/>
+            <br/>
             <hr/>
             <h2>Instantiate boorus</h2>
             There are several boorus you can use, here are the ways the instantiate them:
@@ -61,7 +64,8 @@ new Sakugabooru(BooruAuth auth = null);
 new SankakuComplex(BooruAuth auth = null);
 new Xbooru(BooruAuth auth = null);
 new Yandere(BooruAuth auth = null);</pre>
-            BooruAuth is the authentification method, for now it's not available.
+            BooruAuth is the authentification method, for now it's not available.<br/>
+            <br/>
             <hr/>
             <h2>Feature list</h2>
             <table>
@@ -214,12 +218,14 @@ new Yandere(BooruAuth auth = null);</pre>
                     </tr>
                 </tbody>
             </table>
+            <br/><br/>
             <hr/>
             <h2>Exception thrown</h2>
             <ul>
                 <li>BooruSharp.Search.FeatureUnavailable: This function is not available for this booru (see above)</li>
                 <li>BooruSharp.Search.InvalidTags: There is no image with the tags you provided</li>
             </ul>
+            <br/><br/>
             <hr/>
             <h2>General functions</h2>
             HaveRelatedAPI returns if the booru have a "tag related" API
