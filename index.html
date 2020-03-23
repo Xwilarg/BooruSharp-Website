@@ -10,7 +10,7 @@
             <a href="#introduction">Introduction</a>
         </div>
         <div id="content">
-            <h2>Welcome on BooruSharp 2.0.0 documentation.</h2>
+            <h2>Welcome on BooruSharp 2.0.1 documentation.</h2>
             BooruSharp is a C# library allowing you to get images from Booru websites. BooruSharp currently handle the following websites:
             <ul>
                 <li>booru.allthefallen.moe</li>
@@ -29,7 +29,7 @@
                 <li>xbooru.com</li>
                 <li>yande.re</li>
             </ul>
-            This documentation is a work in progress for the version 2.0.0. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a><br/>
+            This documentation is a work in progress for the version 2.0.1. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a><br/>
             <br/>
             <hr/>
             <h2>Migrating from 1.4.8 to 2.0.0</h2>
@@ -217,7 +217,99 @@ new Sakugabooru(BooruAuth auth = null);
 new SankakuComplex(BooruAuth auth = null);
 new Xbooru(BooruAuth auth = null);
 new Yandere(BooruAuth auth = null);</pre>
-            BooruAuth is the authentification method, for now it's not available.<br/>
+            BooruAuth is the authentification method, see below for more information.<br/>
+            <br/>
+            <hr/>
+            <h2>Authentification</h2>
+            Authentification is not needed for now but here's how it works:<br/>
+            To use it you must instantiate a new BooruAuth using CreateFromApiKey or CreateFromPasswordHash.<br/>
+            To know which one to use, you can refer to this:<br/>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Booru</th>
+                        <th>Can use API Key</th>
+                        <th>Can use Password Hash</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Atfbooru</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>Danbooru Donmai</td>
+                        <td>✔️</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>E621</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>E926</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Furry Booru</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Gelbooru</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Konachan</td>
+                        <td>❌</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>Lolibooru</td>
+                        <td>❌</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>Realbooru</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Rule 34</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Safebooru</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Sakugabooru</td>
+                        <td>❌</td>
+                        <td>✔️</td>
+                    </tr>
+                    <tr>
+                        <td>Sankaku Complex</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Xbooru</td>
+                        <td>✔️</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td>Yandere</td>
+                        <td>❌</td>
+                        <td>✔️</td>
+                    </tr>
+                </tbody>
+            </table>
             <br/>
             <hr/>
             <h2>Create your own booru</h2>
@@ -234,9 +326,6 @@ new Yandere(BooruAuth auth = null);</pre>
             </ul>
             Here's an example with Safebooru (https://safebooru.org/):
 <pre class="prettyprint">public sealed class Safebooru(BooruAuth auth = null) : base("safebooru.org", auth, BooruOptions.noComment)</pre>
-            BooruAuth is a class taking in parameter your login and your password hash.<br/>
-            For now it's not used so it must be set as null.<br/>
-            <br/>
             BooruOptions are settings to precise the behaviour of your booru.<br/>
             Templates probably already gives most of the options you need so you don't have to think too much about them.
             <ul>
