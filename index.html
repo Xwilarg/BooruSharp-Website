@@ -7,10 +7,23 @@
     </head>
     <body>
         <div id="sideMenu">
-            <a href="#introduction">Introduction</a>
+            <a href="#welcome">Introduction</a>
+            <a href="#migrating">From 1.4.8 to 2.0.0</a>
+            <a href="#quickStart">Quick Start</a>
+            <a href="#featureList">Feature list</a>
+            <a href="#instantiate">Instantiate boorus</a>
+            <a href="#authentification">Authentification</a>
+            <a href="#inheritance">Create your own booru</a>
+            <a href="#exception">Exception thrown</a>
+            <a href="#general">General functions</a>
+            <a href="#post">Post functions</a>
+            <a href="#comment">Comment functions</a>
+            <a href="#tag">Tag functions</a>
+            <a href="#related">Related functions</a>
+            <a href="#wiki">Wiki functions</a>
         </div>
         <div id="content">
-            <h2>Welcome on BooruSharp 2.0.1 documentation.</h2>
+            <h2 id="welcome">Welcome on BooruSharp 2.0.1 documentation.</h2>
             BooruSharp is a C# library allowing you to get images from Booru websites. BooruSharp currently handle the following websites:
             <ul>
                 <li>booru.allthefallen.moe</li>
@@ -29,14 +42,30 @@
                 <li>xbooru.com</li>
                 <li>yande.re</li>
             </ul>
-            This documentation is a work in progress for the version 2.0.1. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a><br/>
+            This documentation is for the version 2.0.1. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a><br/>
+            <ol>
+                <li><a href="#welcome">Introduction</a></li>
+                <li><a href="#migrating">Migrating from 1.4.8 to 2.0.0</a></li>
+                <li><a href="#quickStart">Quick Start</a></li>
+                <li><a href="#featureList">Feature list</a></li>
+                <li><a href="#instantiate">Instantiate boorus</a></li>
+                <li><a href="#authentification">Authentification</a></li>
+                <li><a href="#inheritance">Create your own booru</a></li>
+                <li><a href="#exception">Exception thrown</a></li>
+                <li><a href="#general">General functions</a></li>
+                <li><a href="#post">Post functions</a></li>
+                <li><a href="#comment">Comment functions</a></li>
+                <li><a href="#tag">Tag functions</a></li>
+                <li><a href="#related">Related functions</a></li>
+                <li><a href="#wiki">Wiki functions</a></li>
+            </ol>
             <br/>
             <hr/>
-            <h2>Migrating from 1.4.8 to 2.0.0</h2>
+            <h2 id="migrating">Migrating from 1.4.8 to 2.0.0</h2>
             See the <a href="transition.html">transition guide</a>.<br/>
             <br/>
             <hr/>
-            <h2>Quick Start</h2>
+            <h2 id="quickStart">Quick Start</h2>
             To begin with you must instantiate a new Booru, they are in the namespace BooruSharp.Booru<br/>
             <pre class="prettyprint">var booru = new BooruSharp.Booru.Gelbooru();</pre>
             Then you can use all the different functions from it:
@@ -46,7 +75,7 @@ Console.WriteLine(result.fileUrl);</pre>
             You can scroll bellow to see the different functions available.<br/>
             <br/>
             <hr/>
-            <h2>Feature list</h2>
+            <h2 id="featureList">Feature list</h2>
             <table>
                 <thead>
                     <tr>
@@ -199,7 +228,7 @@ Console.WriteLine(result.fileUrl);</pre>
             </table>
             <br/><br/>
             <hr/>
-            <h2>Instantiate boorus</h2>
+            <h2 id="instantiate">Instantiate boorus</h2>
             There are several boorus you can use, here are the ways the instantiate them:
             <pre class="prettyprint">
 new Atfbooru(BooruAuth auth = null);
@@ -220,7 +249,7 @@ new Yandere(BooruAuth auth = null);</pre>
             BooruAuth is the authentification method, see below for more information.<br/>
             <br/>
             <hr/>
-            <h2>Authentification</h2>
+            <h2 id="authentification">Authentification</h2>
             Authentification is not needed for now but here's how it works:<br/>
             To use it you must instantiate a new BooruAuth using CreateFromApiKey or CreateFromPasswordHash.<br/>
             To know which one to use, you can refer to this:<br/>
@@ -312,7 +341,7 @@ new Yandere(BooruAuth auth = null);</pre>
             </table>
             <br/>
             <hr/>
-            <h2>Create your own booru</h2>
+            <h2 id="inheritance">Create your own booru</h2>
             To create your own booru, you need to inherit one of the class in BooruSharp.Booru.Template.<br/>
             Each booru take in parameters the base URL of the website, the authentification to the booru (can be null) and somme BooruOptions (optional).<br/>
             The templates are:
@@ -342,14 +371,15 @@ new Yandere(BooruAuth auth = null);</pre>
             </ul>
             <br/>
             <hr/>
-            <h2>Exception thrown</h2>
+            <h2 id="exception">Exception thrown</h2>
             <ul>
-                <li>BooruSharp.Search.FeatureUnavailable: This function is not available for this booru (see above)</li>
-                <li>BooruSharp.Search.InvalidTags: There is no image with the tags you provided</li>
+                <li>Search.FeatureUnavailable: This function is not available for this booru (see above)</li>
+                <li>Search.InvalidTags: There is no image with the tags you provided</li>
+                <li>Search.InvalidAuthentificationMethod: Invalid authentification method used. See <a href="#authentification">the authentification section</a></li>
             </ul>
             <br/><br/>
             <hr/>
-            <h2>General functions</h2>
+            <h2 id="general">General functions</h2>
             HaveRelatedAPI returns if the booru have a "tag related" API
 <pre class="prettyprint">bool HaveRelatedAPI();</pre><br/>
             HaveWikiAPI returns if the booru have a "wiki" API
@@ -363,7 +393,7 @@ new Yandere(BooruAuth auth = null);</pre>
             CheckAvailabilityAsync check if the booru is avaiable, throw a HttpRequestException if not
 <pre class="prettyprint">async Task CheckAvailabilityAsync();</pre><br/>
             <hr/>
-            <h2>Post functions</h2>
+            <h2 id="post">Post functions</h2>
             GetImageByMd5Async returns a post given it MD5 hash
 <pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetImageByMd5Async(string md5);</pre><br/>
             GetRandomImageAsync returns a random post. Tags can be given in parameters
@@ -405,7 +435,7 @@ enum Rating
             Hash (md5) of the image
 <pre class="prettyprint">string md5</pre><br/>
             <hr/>
-            <h2>Comment functions</h2>
+            <h2 id="comment">Comment functions</h2>
             GetCommentsAsync return the comment of a post given it id
 <pre class="prettyprint">async Task&lt;Search.Comment.SearchResult&gt; GetCommentsAsync(int postId);</pre><br/>
             GetLastsCommentsAsync return the lasts comments posted on the website
@@ -425,7 +455,7 @@ enum Rating
             Comment's message
 <pre class="prettyprint">string body</pre><br/>
             <hr/>
-            <h2>Tag functions</h2>
+            <h2 id="tag">Tag functions</h2>
             GetTagAsync return a tag given it name
 <pre class="prettyprint">async Task&lt;Search.Tag.SearchResult&gt; GetTagAsync(string name);</pre><br/>
             GetTagAsync return a tag given it id
@@ -451,7 +481,7 @@ enum TagType
             Number of occurences of the tag
 <pre class="prettyprint">int count</pre><br/>
             <hr/>
-            <h2>Related functions</h2>
+            <h2 id="related">Related functions</h2>
             GetRelatedAsync return the tags related to the one given in parameter
 <pre class="prettyprint">async Task&lt;Search.Related.SearchResult[]&gt; GetRelatedAsync(string tag);</pre><br/>
             <br/>
@@ -461,7 +491,7 @@ enum TagType
             Number of occurences of the tag
 <pre class="prettyprint">int? count</pre><br/>
             <hr/>
-            <h2>Wiki functions</h2>
+            <h2 id="wiki">Wiki functions</h2>
             GetWikiAsync return a wiki page
 <pre class="prettyprint">async Task&lt;Search.Wiki.SearchResult&gt; GetWikiAsync(string query);</pre><br/>
             <br/>
