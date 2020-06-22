@@ -23,7 +23,7 @@
             <a href="#wiki">Wiki functions</a>
         </div>
         <div id="content">
-            <h2 id="welcome">Welcome on BooruSharp 2.0.1 documentation.</h2>
+            <h2 id="welcome">Welcome on BooruSharp 2.2.0 documentation.</h2>
             BooruSharp is a C# library allowing you to get images from Booru websites. BooruSharp currently handle the following websites:
             <ul>
                 <li>booru.allthefallen.moe</li>
@@ -47,7 +47,7 @@
             And on NuGet at <a href="https://www.nuget.org/packages/BooruSharp/">https://www.nuget.org/packages/BooruSharp/</a><br/>
             If you need additional help you can come ask your questions on <a href="https://discord.gg/H6wMRYV">Discord</a> or open an issue on <a href="https://github.com/Xwilarg/BooruSharp/issues">GitHub</a><br/>
             <br/>
-            This documentation is for the version 2.0.1. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a><br/>
+            This documentation is for the version 2.2.0. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a><br/>
             <br/>
             <hr/>
             <h2 id="migrating">Migrating from 1.4.8 to 2.0.0</h2>
@@ -220,27 +220,26 @@ Console.WriteLine(result.fileUrl);</pre>
             <h2 id="instantiate">Instantiate boorus</h2>
             There are several boorus you can use, here are the ways the instantiate them:
             <pre class="prettyprint">
-new Atfbooru(BooruAuth auth = null);
-new DanbooruDonmai(BooruAuth auth = null);
-new E621(BooruAuth auth = null);
-new E926(BooruAuth auth = null);
-new Furrybooru(BooruAuth auth = null);
-new Gelbooru(BooruAuth auth = null);
-new Konachan(BooruAuth auth = null);
-new Lolibooru(BooruAuth auth = null);
-new Realbooru(BooruAuth auth = null);
-new Rule34(BooruAuth auth = null);
-new Safebooru(BooruAuth auth = null);
-new Sakugabooru(BooruAuth auth = null);
-new SankakuComplex(BooruAuth auth = null);
-new Xbooru(BooruAuth auth = null);
-new Yandere(BooruAuth auth = null);</pre>
-            BooruAuth is the authentification method, see below for more information.<br/>
+new Atfbooru();
+new DanbooruDonmai();
+new E621();
+new E926();
+new Furrybooru();
+new Gelbooru();
+new Konachan();
+new Lolibooru();
+new Realbooru();
+new Rule34();
+new Safebooru();
+new Sakugabooru();
+new SankakuComplex();
+new Xbooru();
+new Yandere();</pre><br/>
             <br/>
             <hr/>
             <h2 id="authentification">Authentification</h2>
             Authentification is not needed for now but here's how it works:<br/>
-            To use it you must instantiate a new BooruAuth using CreateFromApiKey or CreateFromPasswordHash.<br/>
+            To use it you must instantiate a new BooruAuth using CreateFromApiKey or CreateFromPasswordHash then use the SetBooruAuth function.<br/>
             To know which one to use, you can refer to this:<br/>
             <table>
                 <thead>
@@ -343,7 +342,7 @@ new Yandere(BooruAuth auth = null);</pre>
                 <li>Sankaku: Based on Sankaku Channel</li>
             </ul>
             Here's an example with Safebooru (https://safebooru.org/):
-<pre class="prettyprint">public sealed class Safebooru(BooruAuth auth = null) : base("safebooru.org", auth, BooruOptions.noComment)</pre>
+<pre class="prettyprint">public sealed class Safebooru() : base("safebooru.org", BooruOptions.noComment)</pre>
             BooruOptions are settings to precise the behaviour of your booru.<br/>
             Templates probably already gives most of the options you need so you don't have to think too much about them.
             <ul>
@@ -369,6 +368,10 @@ new Yandere(BooruAuth auth = null);</pre>
             <br/><br/>
             <hr/>
             <h2 id="general">General functions</h2>
+            SetHttpClient set the HttpClient used by BooruSharp for the API requests, if you don't use this function, a new one will automatically be created
+<pre class="prettyprint">void SetHttpClient(HttpClient httpClient);</pre><br/>
+            SetBooruAuth allow to authentificate to a booru, see <a href="https://boorusharp.zirk.eu/#authentification">https://boorusharp.zirk.eu/#authentification</a>
+<pre class="prettyprint">void SetBooruAuth(BooruAuth auth);</pre><br/>
             HaveRelatedAPI returns if the booru have a "tag related" API
 <pre class="prettyprint">bool HaveRelatedAPI();</pre><br/>
             HaveWikiAPI returns if the booru have a "wiki" API
