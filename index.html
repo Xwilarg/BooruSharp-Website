@@ -23,7 +23,7 @@
             <a href="#wiki">Wiki functions</a>
         </div>
         <div id="content">
-            <h2 id="welcome">Welcome on BooruSharp 2.2.0 documentation.</h2>
+            <h2 id="welcome">Welcome on BooruSharp 2.2.1 documentation.</h2>
             BooruSharp is a C# library allowing you to get images from Booru websites. BooruSharp currently handle the following websites:
             <ul>
                 <li>booru.allthefallen.moe</li>
@@ -75,6 +75,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <th>Last Comments API</th>
                         <th>Wiki API</th>
                         <th>Related Tag API</th>
+                        <th>Post Count API</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -86,6 +87,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
+                        <td>❌</td>
                     </tr>
                     <tr>
                         <td>Danbooru Donmai</td>
@@ -95,10 +97,12 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
+                        <td>❌</td>
                     </tr>
                     <tr>
                         <td>E621</td>
                         <td>✔️</td>
+                        <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
@@ -113,6 +117,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
+                        <td>❌</td>
                     </tr>
                     <tr>
                         <td>Furry Booru</td>
@@ -122,6 +127,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>❌</td>
                         <td>❌</td>
+                        <td>✔️</td>
                     </tr>
                     <tr>
                         <td>Gelbooru</td>
@@ -131,10 +137,12 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>❌</td>
                         <td>❌</td>
+                        <td>✔️</td>
                     </tr>
                     <tr>
                         <td>Konachan</td>
                         <td>❌</td>
+                        <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
@@ -149,6 +157,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
+                        <td>✔️</td>
                     </tr>
                     <tr>
                         <td>Realbooru</td>
@@ -158,6 +167,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>❌</td>
                         <td>❌</td>
+                        <td>✔️</td>
                     </tr>
                     <tr>
                         <td>Rule 34</td>
@@ -167,6 +177,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
+                        <td>✔️</td>
                     </tr>
                     <tr>
                         <td>Safebooru</td>
@@ -176,6 +187,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
+                        <td>✔️</td>
                     </tr>
                     <tr>
                         <td>Sakugabooru</td>
@@ -183,6 +195,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>❌</td>
+                        <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
                     </tr>
@@ -194,6 +207,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>❌</td>
+                        <td>❌</td>
                     </tr>
                     <tr>
                         <td>Xbooru</td>
@@ -203,6 +217,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>❌</td>
                         <td>❌</td>
+                        <td>✔️</td>
                     </tr>
                     <tr>
                         <td>Yandere</td>
@@ -210,6 +225,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>❌</td>
+                        <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
                     </tr>
@@ -331,7 +347,7 @@ new Yandere();</pre><br/>
             <hr/>
             <h2 id="inheritance">Create your own booru</h2>
             To create your own booru, you need to inherit one of the class in BooruSharp.Booru.Template.<br/>
-            Each booru take in parameters the base URL of the website, the authentification to the booru (can be null) and somme BooruOptions (optional).<br/>
+            Each booru take in parameters the base URL of the website and some BooruOptions (optional).<br/>
             The templates are:
             <ul>
                 <li>Danbooru: Based on Danbooru Donmai</li>
@@ -343,6 +359,7 @@ new Yandere();</pre><br/>
             </ul>
             Here's an example with Safebooru (https://safebooru.org/):
 <pre class="prettyprint">public sealed class Safebooru() : base("safebooru.org", BooruOptions.noComment)</pre>
+            Please notice that we didn't put the "https://" at the beginning of the url and that it also doesn't end with a "/".<br/>
             BooruOptions are settings to precise the behaviour of your booru.<br/>
             Templates probably already gives most of the options you need so you don't have to think too much about them.
             <ul>
@@ -357,6 +374,15 @@ new Yandere();</pre><br/>
                 <li>tagApiXml: Tag API can't be contacted using JSON</li>
                 <li>limitOf20000: Only for Gelbooru and Gelbooru02 template, limit of 20 000 posts per requests</li>
             </ul>
+            If you need to modify how your booru parse the search, you can override one of the following methods:          
+<pre class="prettyprint">protected internal virtual Search.Comment.SearchResult GetCommentSearchResult(object json);
+protected internal virtual Search.Post.SearchResult GetPostSearchResult(JToken obj);
+protected internal virtual Search.Post.SearchResult[] GetPostsSearchResult(object json);
+protected internal virtual JToken ParseFirstPostSearchResult(object json);
+protected internal virtual Search.Related.SearchResult GetRelatedSearchResult(object json);
+protected internal virtual Search.Tag.SearchResult GetTagSearchResult(object json);
+protected internal virtual Search.Wiki.SearchResult GetWikiSearchResult(object json);</pre>
+            Feel free to check how it's done in <a href="https://github.com/Xwilarg/BooruSharp/tree/master/BooruSharp/Booru/Template">the template classes</a> to understand how to do it.
             <br/>
             <hr/>
             <h2 id="exception">Exception thrown</h2>
@@ -390,12 +416,16 @@ new Yandere();</pre><br/>
 <pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetImageByMd5Async(string md5);</pre><br/>
             GetRandomImageAsync returns a random post. Tags can be given in parameters
 <pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetRandomImageAsync(params string[] tagsArg);</pre><br/>
+            GetLastImagesAsync all the post on the first page. Tags can be given in parameters
+<pre class="prettyprint">async Task&lt;Search.Post.SearchResult[]&gt; GetLastImagesAsync(params string[] tagsArg);</pre><br/>
             <br/>
             <h3>Search.Post.SearchResult is defined by the following struct</h3>
             Url of the image
 <pre class="prettyprint">Uri fileUrl</pre><br/>
             Preview url of the image
 <pre class="prettyprint">Uri previewUrl</pre><br/>
+            The url of the post
+<pre class="prettyprint">Uri postUrl</pre><br/>
             Is the image safe or not
 <pre class="prettyprint">Rating rating
 enum Rating
