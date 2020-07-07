@@ -21,9 +21,10 @@
             <a href="#tag">Tag functions</a>
             <a href="#related">Related functions</a>
             <a href="#wiki">Wiki functions</a>
+            <a href="#favorite">Favorite functions</a>
         </div>
         <div id="content">
-            <h2 id="welcome">Welcome on BooruSharp 2.4.0 documentation.</h2>
+            <h2 id="welcome">Welcome on BooruSharp 2.5.0 documentation.</h2>
             BooruSharp is a C# library allowing you to get images from Booru websites. BooruSharp currently handle the following websites:
             <ul>
                 <li>booru.allthefallen.moe</li>
@@ -47,7 +48,7 @@
             And on NuGet at <a href="https://www.nuget.org/packages/BooruSharp/">https://www.nuget.org/packages/BooruSharp/</a><br/>
             If you need additional help you can come ask your questions on <a href="https://discord.gg/H6wMRYV">Discord</a> or open an issue on <a href="https://github.com/Xwilarg/BooruSharp/issues">GitHub</a><br/>
             <br/>
-            This documentation is for the version 2.4.0. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a><br/>
+            This documentation is for the version 2.5.0. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a><br/>
             <br/>
             <hr/>
             <h2 id="migrating">Migrating from 1.4.8 to 2.0.0</h2>
@@ -77,6 +78,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <th>Wiki API</th>
                         <th>Related Tag API</th>
                         <th>Post Count API</th>
+                        <th>Favorite API</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -90,6 +92,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>❌</td>
+                        <td>❌</td>
                     </tr>
                     <tr>
                         <td>Danbooru Donmai</td>
@@ -101,11 +104,13 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>❌</td>
+                        <td>❌</td>
                     </tr>
                     <tr>
                         <td>E621</td>
                         <td>✔️</td>
                         <td>✔️</td>
+                        <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
@@ -123,6 +128,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
+                        <td>❌</td>
                     </tr>
                     <tr>
                         <td>Furry Booru</td>
@@ -133,6 +139,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>❌</td>
                         <td>❌</td>
+                        <td>✔️</td>
                         <td>✔️</td>
                     </tr>
                     <tr>
@@ -145,6 +152,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>❌</td>
                         <td>❌</td>
                         <td>✔️</td>
+                        <td>✔️</td>
                     </tr>
                     <tr>
                         <td>Konachan</td>
@@ -156,6 +164,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
+                        <td>❌</td>
                     </tr>
                     <tr>
                         <td>Lolibooru</td>
@@ -167,6 +176,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
+                        <td>❌</td>
                     </tr>
                     <tr>
                         <td>Realbooru</td>
@@ -177,6 +187,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>❌</td>
                         <td>❌</td>
+                        <td>✔️</td>
                         <td>✔️</td>
                     </tr>
                     <tr>
@@ -189,6 +200,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>❌</td>
                         <td>❌</td>
                         <td>✔️</td>
+                        <td>✔️</td>
                     </tr>
                     <tr>
                         <td>Safebooru</td>
@@ -199,6 +211,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
+                        <td>✔️</td>
                         <td>✔️</td>
                     </tr>
                     <tr>
@@ -211,6 +224,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
+                        <td>❌</td>
                     </tr>
                     <tr>
                         <td>Sankaku Complex</td>
@@ -220,6 +234,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
+                        <td>❌</td>
                         <td>❌</td>
                         <td>❌</td>
                     </tr>
@@ -233,6 +248,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>❌</td>
                         <td>❌</td>
                         <td>✔️</td>
+                        <td>✔️</td>
                     </tr>
                     <tr>
                         <td>Yandere</td>
@@ -244,6 +260,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
+                        <td>❌</td>
                     </tr>
                 </tbody>
             </table>
@@ -270,95 +287,16 @@ new Yandere();</pre><br/>
             <br/>
             <hr/>
             <h2 id="authentification">Authentification</h2>
-            Authentification is not needed for now but here's how it works:<br/>
-            To use it you must instantiate a new BooruAuth using CreateFromApiKey or CreateFromPasswordHash then use the SetBooruAuth function.<br/>
-            To know which one to use, you can refer to this:<br/>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Booru</th>
-                        <th>Can use API Key</th>
-                        <th>Can use Password Hash</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Atfbooru</td>
-                        <td>✔️</td>
-                        <td>✔️</td>
-                    </tr>
-                    <tr>
-                        <td>Danbooru Donmai</td>
-                        <td>✔️</td>
-                        <td>✔️</td>
-                    </tr>
-                    <tr>
-                        <td>E621</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                    </tr>
-                    <tr>
-                        <td>E926</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                    </tr>
-                    <tr>
-                        <td>Furry Booru</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                    </tr>
-                    <tr>
-                        <td>Gelbooru</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                    </tr>
-                    <tr>
-                        <td>Konachan</td>
-                        <td>❌</td>
-                        <td>✔️</td>
-                    </tr>
-                    <tr>
-                        <td>Lolibooru</td>
-                        <td>❌</td>
-                        <td>✔️</td>
-                    </tr>
-                    <tr>
-                        <td>Realbooru</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                    </tr>
-                    <tr>
-                        <td>Rule 34</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                    </tr>
-                    <tr>
-                        <td>Safebooru</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                    </tr>
-                    <tr>
-                        <td>Sakugabooru</td>
-                        <td>❌</td>
-                        <td>✔️</td>
-                    </tr>
-                    <tr>
-                        <td>Sankaku Complex</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                    </tr>
-                    <tr>
-                        <td>Xbooru</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                    </tr>
-                    <tr>
-                        <td>Yandere</td>
-                        <td>❌</td>
-                        <td>✔️</td>
-                    </tr>
-                </tbody>
-            </table>
+            You might need authentification for some services (like the favorites)<br/>
+            To do that, you need to create a new BooruAuth:
+            <pre class="prettyprint">
+new BooruAuth(string userId, string passwordHash);</pre><br/>
+            Then to pass it to your booru using SetBooruAuth:
+            <pre class="prettyprint">
+booru.SetBooruAuth(BooruAuth auth);</pre><br/>
+            Getting your user ID and your password hash can be fairly annoying, I would advice you to go on any image of the booru you want this information, to open the developer pannel (F12) and go in the "Network" tab.<br/>
+            Then press the button to add the image to your favorite and look at the last request in the "Cookies" section.<br/>
+            <img src="img/auth.png" alt="Authentification explanations"/>
             <br/>
             <hr/>
             <h2 id="inheritance">Create your own booru</h2>
@@ -422,8 +360,16 @@ protected internal virtual Search.Wiki.SearchResult GetWikiSearchResult(object j
 <pre class="prettyprint">bool HaveCommentAPI();</pre><br/>
             HaveTagByIdAPI returns if the booru have a can search tags by ID
 <pre class="prettyprint">bool HaveTagByIdAPI();</pre><br/>
-            HaveSearchLastComment returns if the booru can search for all last comments
+HaveSearchLastComment returns if the booru can search for all last comments
 <pre class="prettyprint">bool HaveSearchLastComment();</pre><br/>
+            HavePostByMd5API returns if the booru can search post using this MD5
+<pre class="prettyprint">bool HavePostByMd5API();</pre><br/>
+            HavePostCountAPI returns if the booru can return the total number of images it have given some tags
+<pre class="prettyprint">bool HavePostCountAPI();</pre><br/>
+            HaveMultipleRandomAPI returns if can search multiple random images at once
+<pre class="prettyprint">bool HaveMultipleRandomAPI();</pre><br/>
+            HaveFavoriteAPI returns if the booru can add/remove favorite
+<pre class="prettyprint">bool HaveFavoriteAPI();</pre><br/>
             CheckAvailabilityAsync check if the booru is avaiable, throw a HttpRequestException if not
 <pre class="prettyprint">async Task CheckAvailabilityAsync();</pre><br/>
             <hr/>
@@ -544,6 +490,15 @@ enum TagType
 <pre class="prettyprint">DateTime lastUpdate</pre><br/>
             Tag description
 <pre class="prettyprint">string body</pre><br/>
+            <br/>
+            <hr/>
+            <h2 id="favorite">Favorite functions</h2>
+            You must be authentificated to use favorite functions (see <a href="#authentification">authentification</a>)<br/><br/>
+            AddFavoriteAsync add a comment to favorite given some tags
+<pre class="prettyprint">async Task AddFavoriteAsync(int postId);</pre><br/>
+            RemoveFavoriteAsync add a comment to favorite given some tags
+            <pre class="prettyprint">async Task RemoveFavoriteAsync(int postId);</pre><br/>
+            <br/>
             <hr/>
         </div>
     </body>
