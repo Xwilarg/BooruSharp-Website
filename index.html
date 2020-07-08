@@ -24,7 +24,7 @@
             <a href="#favorite">Favorite functions</a>
         </div>
         <div id="content">
-            <h2 id="welcome">Welcome on BooruSharp 2.5.0 documentation.</h2>
+            <h2 id="welcome">Welcome on BooruSharp 2.6.1 documentation.</h2>
             BooruSharp is a C# library allowing you to get images from Booru websites. BooruSharp currently handle the following websites:
             <ul>
                 <li>booru.allthefallen.moe</li>
@@ -48,7 +48,7 @@
             And on NuGet at <a href="https://www.nuget.org/packages/BooruSharp/">https://www.nuget.org/packages/BooruSharp/</a><br/>
             If you need additional help you can come ask your questions on <a href="https://discord.gg/H6wMRYV">Discord</a> or open an issue on <a href="https://github.com/Xwilarg/BooruSharp/issues">GitHub</a><br/>
             <br/>
-            This documentation is for the version 2.5.0. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a><br/>
+            This documentation is for the version 2.6.1. For the version 1.4.8, please refer to the old one: <a href="https://github.com/Xwilarg/BooruSharp/wiki">https://github.com/Xwilarg/BooruSharp/wiki</a><br/>
             <br/>
             <hr/>
             <h2 id="migrating">Migrating from 1.4.8 to 2.0.0</h2>
@@ -71,6 +71,7 @@ Console.WriteLine(result.fileUrl);</pre>
                     <tr>
                         <th>Booru</th>
                         <th>Multiple Random Images</th>
+                        <th>Post by ID</th>
                         <th>Post by MD5</th>
                         <th>Tag by ID</th>
                         <th>Comment API</th>
@@ -88,6 +89,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
+                        <td>✔️</td>
                         <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
@@ -96,6 +98,7 @@ Console.WriteLine(result.fileUrl);</pre>
                     </tr>
                     <tr>
                         <td>Danbooru Donmai</td>
+                        <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
@@ -109,6 +112,7 @@ Console.WriteLine(result.fileUrl);</pre>
                     <tr>
                         <td>E621</td>
                         <td>✔️</td>
+                        <td>❌</td>
                         <td>✔️</td>
                         <td>❌</td>
                         <td>❌</td>
@@ -121,6 +125,7 @@ Console.WriteLine(result.fileUrl);</pre>
                     <tr>
                         <td>E926</td>
                         <td>✔️</td>
+                        <td>❌</td>
                         <td>✔️</td>
                         <td>❌</td>
                         <td>❌</td>
@@ -133,6 +138,7 @@ Console.WriteLine(result.fileUrl);</pre>
                     <tr>
                         <td>Furry Booru</td>
                         <td>❌</td>
+                        <td>✔️</td>
                         <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
@@ -144,6 +150,7 @@ Console.WriteLine(result.fileUrl);</pre>
                     </tr>
                     <tr>
                         <td>Gelbooru</td>
+                        <td>✔️</td>
                         <td>✔️</td>
                         <td>❌</td>
                         <td>✔️</td>
@@ -158,6 +165,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>Konachan</td>
                         <td>✔️</td>
                         <td>❌</td>
+                        <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
@@ -170,6 +178,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>Lolibooru</td>
                         <td>✔️</td>
                         <td>❌</td>
+                        <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
@@ -181,6 +190,7 @@ Console.WriteLine(result.fileUrl);</pre>
                     <tr>
                         <td>Realbooru</td>
                         <td>❌</td>
+                        <td>✔️</td>
                         <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
@@ -193,6 +203,7 @@ Console.WriteLine(result.fileUrl);</pre>
                     <tr>
                         <td>Rule 34</td>
                         <td>❌</td>
+                        <td>✔️</td>
                         <td>❌</td>
                         <td>✔️</td>
                         <td>❌</td>
@@ -205,6 +216,7 @@ Console.WriteLine(result.fileUrl);</pre>
                     <tr>
                         <td>Safebooru</td>
                         <td>❌</td>
+                        <td>✔️</td>
                         <td>❌</td>
                         <td>✔️</td>
                         <td>❌</td>
@@ -218,6 +230,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>Sakugabooru</td>
                         <td>✔️</td>
                         <td>❌</td>
+                        <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>❌</td>
@@ -230,6 +243,7 @@ Console.WriteLine(result.fileUrl);</pre>
                         <td>Sankaku Complex</td>
                         <td>✔️</td>
                         <td>❌</td>
+                        <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
                         <td>✔️</td>
@@ -241,6 +255,7 @@ Console.WriteLine(result.fileUrl);</pre>
                     <tr>
                         <td>Xbooru</td>
                         <td>❌</td>
+                        <td>✔️</td>
                         <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
@@ -253,6 +268,7 @@ Console.WriteLine(result.fileUrl);</pre>
                     <tr>
                         <td>Yandere</td>
                         <td>✔️</td>
+                        <td>❌</td>
                         <td>❌</td>
                         <td>✔️</td>
                         <td>✔️</td>
@@ -343,7 +359,10 @@ protected internal virtual Search.Wiki.SearchResult GetWikiSearchResult(object j
             <ul>
                 <li>Search.FeatureUnavailable: This function is not available for this booru (see above)</li>
                 <li>Search.InvalidTags: There is no image with the tags you provided</li>
-                <li>Search.InvalidAuthentificationMethod: Invalid authentification method used. See <a href="#authentification">the authentification section</a></li>
+                <li>Search.AuthentificationInvalid: The credentials you provided are invalid</li>
+                <li>Search.InvalidPostId: There is no post with this ID (only for favorites)</li>
+                <li>Search.TooManyTags: You can't provide more than 2 tags for this booru</li>
+                <li>Search.AuthentificationRequired: You must authentificate before using this feature. See <a href="#authentification">the authentification section</a></li>
             </ul>
             <br/><br/>
             <hr/>
@@ -364,6 +383,8 @@ HaveSearchLastComment returns if the booru can search for all last comments
 <pre class="prettyprint">bool HaveSearchLastComment();</pre><br/>
             HavePostByMd5API returns if the booru can search post using this MD5
 <pre class="prettyprint">bool HavePostByMd5API();</pre><br/>
+HavePostByMd5API returns if the booru can search post using this MD5
+<pre class="prettyprint">bool HavePostById();</pre><br/>
             HavePostCountAPI returns if the booru can return the total number of images it have given some tags
 <pre class="prettyprint">bool HavePostCountAPI();</pre><br/>
             HaveMultipleRandomAPI returns if can search multiple random images at once
@@ -376,6 +397,8 @@ HaveSearchLastComment returns if the booru can search for all last comments
             <h2 id="post">Post functions</h2>
             GetImageByMd5Async returns a post given it MD5 hash
 <pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetImageByMd5Async(string md5);</pre><br/>
+            GetImageByIdAsync returns a post given it ID hash
+<pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetImageByIdAsync(int id);</pre><br/>
             GetRandomImageAsync returns a random post. Tags can be given in parameters
 <pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetRandomImageAsync(params string[] tagsArg);</pre><br/>
             GetLastImagesAsync all the post on the first page. Tags can be given in parameters
