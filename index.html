@@ -60,7 +60,7 @@
             <pre class="prettyprint">var booru = new BooruSharp.Booru.Gelbooru();</pre>
             Then you can use all the different functions from it:
             <pre class="prettyprint">
-var result = booru.GetRandomImageAsync("kantai_collection");
+var result = booru.GetRandomPostAsync("kantai_collection");
 Console.WriteLine(result.fileUrl);</pre>
             You can scroll bellow to see the different functions available.<br/>
             <br/>
@@ -395,13 +395,13 @@ protected internal virtual Search.Wiki.SearchResult GetWikiSearchResult(object j
 <pre class="prettyprint">async Task CheckAvailabilityAsync();</pre><br/>
             <hr/>
             <h2 id="post">Post functions</h2>
-            GetImageByMd5Async returns a post given it MD5 hash
+            GetPostByMd5Async returns a post given it MD5 hash
 <pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetImageByMd5Async(string md5);</pre><br/>
-            GetImageByIdAsync returns a post given it ID hash
+            GetPostByIdAsync returns a post given it ID hash
 <pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetImageByIdAsync(int id);</pre><br/>
-            GetRandomImageAsync returns a random post. Tags can be given in parameters
-<pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetRandomImageAsync(params string[] tagsArg);</pre><br/>
-            GetLastImagesAsync all the post on the first page. Tags can be given in parameters
+            GetRandomPostAsync returns a random post. Tags can be given in parameters
+<pre class="prettyprint">async Task&lt;Search.Post.SearchResult&gt; GetRandomPostAsync(params string[] tagsArg);</pre><br/>
+            GetLastPostsAsync all the post on the first page. Tags can be given in parameters
 <pre class="prettyprint">async Task&lt;Search.Post.SearchResult[]&gt; GetLastImagesAsync(params string[] tagsArg);</pre><br/>
             <br/>
             <h3>Search.Post.SearchResult is defined by the following struct</h3>
