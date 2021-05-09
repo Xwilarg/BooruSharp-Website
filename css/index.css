@@ -1,40 +1,35 @@
-#sideMenu {
-    height: 100%;
+html {
+    background-color: rgb(32, 42, 52);
+    font-family: 'Noto Sans', sans-serif;
+    color: rgb(212, 212, 212);
+}
+
+.button {
+    border: rgb(212, 212, 212) 1px solid;
     width: 200px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #3F403F;
-}
-
-#content {
-    margin-left: 200px;
-}
-
-#sideMenu > a {
-    color: #DBDBDB;
-    padding: 16px;
+    height: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
     text-decoration: none;
-    display: block;
+    display: inline-block;
+    font-size: 18px;
+    margin: 10px;
+    color: rgb(212, 212, 212);
+    border-radius: 5px;
 }
 
-#sideMenu > a:hover {
-    background-color: #DBDBDB;
-    color: #3F403F;
+#menu {
+    margin-top: 100px;
+    margin-bottom: 300px;
+    text-align: center;
 }
 
-table {
-    border-collapse: collapse;
+p {
+    margin-top: 5em;
+    text-align: center;
 }
 
-table, th, td {
-    border: 1px solid black;
-}
-
-table, th, td {
-    border: 1px solid black;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+#header {
+    font-size: 1.5em;
 }
