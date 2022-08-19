@@ -5,7 +5,6 @@ html {
 }
 
 .button {
-    border: rgb(212, 212, 212) 1px solid;
     width: 200px;
     height: 50px;
     padding-top: 15px;
@@ -15,8 +14,16 @@ html {
     display: inline-block;
     font-size: 18px;
     margin: 10px;
-    color: rgb(212, 212, 212);
     border-radius: 5px;
+    border: rgb(212, 212, 212) 1px solid;
+    background-color: rgb(32, 42, 52);
+    color: rgb(212, 212, 212);
+}
+
+.button:hover {
+    color: rgb(32, 42, 52);
+    background-color: rgb(212, 212, 212);
+    border: rgb(32, 42, 52) 1px solid;
 }
 
 #menu {

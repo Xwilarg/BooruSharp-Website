@@ -1,0 +1,1 @@
+Must contains the documentation once generated from [BooruSharp main repository](https://github.com/Xwilarg/BooruSharp/tree/master/Documentation)
